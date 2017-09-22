@@ -9,9 +9,7 @@ class Home extends Component {
 
   componentDidMount() {
     axios.get('/api/apps')
-      .then( res => {
-        console.log(res);
-        this.setState({ apps: res.data })});
+      .then( res => {this.setState({ apps: res.data })});
   }
 
   show = () => (
