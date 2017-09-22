@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import { Header } from 'semantic-ui-react';
 import axios from 'axios';
+import Form from './Form';
 
 class Home extends Component {
-  state = { apps: [] }
+  state = { apps: [], showForm: false }
 
   componentDidMount() {
     axios.get('/api/apps')
-      .then( res => this.setState({ apps: res.data }));
+      .then( res => {
+        console.log(res);
+        this.setState({ apps: res.data })});
   }
 
   show = () => (
