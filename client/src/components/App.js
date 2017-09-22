@@ -9,6 +9,7 @@ import ProtectedRoute from './ProtectedRoute';
 import AuthRoute from './AuthRoute';
 import FetchUser from './FetchUser';
 import { Switch, Route } from 'react-router-dom';
+import GameApps from './GameApps';
 
 class App extends Component {
   render() {
