@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import { Header, Container, Card } from 'semantic-ui-react';
+import { Header, Container, Card, Image, Divider } from 'semantic-ui-react';
 import axios from 'axios';
 import Form from './Form';
 
@@ -43,19 +43,36 @@ class Home extends Component {
 
   render() {
     const { showForm } = this.state;
+    let { apps } = this.state;
     return(
       <div>
         <h2>App Store Apps</h2>
           <button onClick={this.toggleForm}>
             { showForm ? 'Hide Form' : 'New App'}
           </button>
-        <Container>
+          <Card.Group itemsPerRow={4}>
+            { apps.map( app =>
+            <Card key={app.id}>
+              <Link to={`/apps/${app.id}`}>
+                <Card.Content>
+                  <Image src={app.logo} />
+                  <Divider />
+                  <Card.Header>
+                    {app.name}
+                  </Card.Header>
+                </Card.Content>
+              </Link>
+            </Card>
+            )
+          }
+        </Card.Group>
+        {/* <Container>
           <Header>
             <Card>
               { showForm ? this.form() : this.show() }
             </Card>
           </Header>
-        </Container>
+        </Container> */}
       </div>
     )
   }

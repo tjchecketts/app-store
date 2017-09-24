@@ -43,12 +43,23 @@ class GameApps extends React.Component {
     return <Form {...this.state.product} submit={this.submit} />
   }
 
+  removeApp = (id) => {
+    axios.delete(`/api/apps/${id}`)
+      .then( () => {
+        this.props.history.push('/');
+      })
+  }
+
   render() {
     let { edit } = this.state;
     return (
       <div>
         { edit ? this.edit() : this.show() }
         <button onClick={this.toggleEdit}>{ edit ? 'Cancel' : 'Edit App' }</button>
+        {/* delete action not working right now */}
+        <button onClick={ () => this.removeApp(this.state)}>
+          Delete App
+        </button>
       </div>
     )
   }
