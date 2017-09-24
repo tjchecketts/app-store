@@ -60,7 +60,7 @@ class Form extends React.Component {
         />
         <input
           id="logo"
-          placeholder="Logo"
+          placeholder="Logo URL"
           value={name}
           onChange={this.handleChange}
           required

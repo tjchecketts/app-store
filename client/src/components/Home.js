@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import { Header } from 'semantic-ui-react';
+import { Header, Container, Card } from 'semantic-ui-react';
 import axios from 'axios';
 import Form from './Form';
 
@@ -17,8 +17,9 @@ class Home extends Component {
       {this.state.apps.map( p =>
         <div key={p.id}>
           <Link to={`/apps/${p.id}`}>
-            {p.name}
+            {p.name} 
             {<img src={p.logo} alt={"logo"} height="250" width="350" />}
+            {' '}
           </Link>
         </div>
       )}
@@ -45,10 +46,16 @@ class Home extends Component {
     return(
       <div>
         <h2>App Store Apps</h2>
-        <button onClick={this.toggleForm}>
-          { showForm ? 'Hide Form' : 'New App'}
-        </button>
-        { showForm ? this.form() : this.show() }
+          <button onClick={this.toggleForm}>
+            { showForm ? 'Hide Form' : 'New App'}
+          </button>
+        <Container>
+          <Header>
+            <Card>
+              { showForm ? this.form() : this.show() }
+            </Card>
+          </Header>
+        </Container>
       </div>
     )
   }
