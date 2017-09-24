@@ -23,13 +23,15 @@ class GameApps extends React.Component {
 
   show() {
     if(this.state.app) {
-      let { app: { name, description, category, version }} = this.state;
+      let { app: { name, description, category, version, price, logo }} = this.state;
       return (
         <div>
           <h1>App Name: {name}</h1>
+          <h3>Logo: {<img src={logo} alt={"logo"} height="250" width="350" />}</h3>
           <h3>Description: {description}</h3>
           <h3>Category: {category}</h3>
           <h3>Version: {version}</h3>
+          <h3>Price: ${price}</h3>
         </div>
       )
     }

@@ -2,7 +2,7 @@ import React from 'react';
 
 class Form extends React.Component {
   // add price back into this
-  defaultValues = { name: '', description: '', category: '', version: '' }
+  defaultValues = { name: '', description: '', category: '', version: '', price: '', logo: '' }
   state = {...this.defaultValues}
 
   componentDidMount() {
@@ -23,7 +23,7 @@ class Form extends React.Component {
   }
 
   render() {
-    let { name, description, category, version } = this.state;
+    let { name, description, category, version, price, logo } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <input
@@ -50,6 +50,20 @@ class Form extends React.Component {
           placeholder="Version"
           value={version}
           onChange={this.handleChange}
+        />
+        <input
+          id="price"
+          placeholder="Price"
+          value={name}
+          onChange={this.handleChange}
+          required
+        />
+        <input
+          id="logo"
+          placeholder="Logo"
+          value={name}
+          onChange={this.handleChange}
+          required
         />
         <button>Submit</button>
       </form>

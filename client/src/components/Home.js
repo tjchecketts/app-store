@@ -17,6 +17,7 @@ class Home extends Component {
       {this.state.apps.map( p =>
         <div key={p.id}>
           <Link to={`/apps/${p.id}`}>
+            {p.name}
             {<img src={p.logo} alt={"logo"} height="250" width="350" />}
           </Link>
         </div>
