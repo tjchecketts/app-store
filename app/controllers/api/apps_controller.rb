@@ -28,7 +28,6 @@ class Api::AppsController < ApplicationController
   end
 
   def destroy
-    # @app or @api_app???
     @app.destroy
   end
 

@@ -50,29 +50,24 @@ class Home extends Component {
           <button onClick={this.toggleForm}>
             { showForm ? 'Hide Form' : 'New App'}
           </button>
-          <Card.Group itemsPerRow={4}>
-            { apps.map( app =>
-            <Card key={app.id}>
-              <Link to={`/apps/${app.id}`}>
-                <Card.Content>
-                  <Image src={app.logo} />
-                  <Divider />
-                  <Card.Header>
-                    {app.name}
-                  </Card.Header>
-                </Card.Content>
-              </Link>
-            </Card>
-            )
+          { showForm ? this.form() : 
+            <Card.Group itemsPerRow={4}>
+              { apps.map( app =>
+              <Card key={app.id}>
+                <Link to={`/apps/${app.id}`}>
+                  <Card.Content>
+                    <Image src={app.logo}/>
+                    <Divider />
+                    <Card.Header>
+                      {app.name}
+                    </Card.Header>
+                  </Card.Content>
+                </Link>
+              </Card>
+                )
+              }
+            </Card.Group>
           }
-        </Card.Group>
-        {/* <Container>
-          <Header>
-            <Card>
-              { showForm ? this.form() : this.show() }
-            </Card>
-          </Header>
-        </Container> */}
       </div>
     )
   }

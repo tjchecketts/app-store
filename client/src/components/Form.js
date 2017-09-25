@@ -38,30 +38,35 @@ class Form extends React.Component {
           placeholder="Description"
           value={description}
           onChange={this.handleChange}
+          required
         />
         <input
           id="category"
           placeholder="Category"
           value={category}
           onChange={this.handleChange}
+          required
         />
         <input
           id="version"
           placeholder="Version"
           value={version}
           onChange={this.handleChange}
+          required
         />
         <input
           id="price"
           placeholder="Price"
-          value={name}
+          value={price}
+          type='number'
           onChange={this.handleChange}
           required
         />
         <input
           id="logo"
           placeholder="Logo URL"
-          value={name}
+          value={logo}
+          type='url'
           onChange={this.handleChange}
           required
         />
