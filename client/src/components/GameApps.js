@@ -27,7 +27,7 @@ class GameApps extends React.Component {
       return (
         <div>
           <h1>App Name: {name}</h1>
-          <h3>Logo: {<img src={logo} alt={"logo"} height="250" width="350" />}</h3>
+          <h3>Logo: {<img src={logo} alt={"logo"} height="80" />}</h3>
           <h3>Description: {description}</h3>
           <h3>Category: {category}</h3>
           <h3>Version: {version}</h3>

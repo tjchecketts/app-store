@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Redirect, Link } from 'react-router-dom';
-import { Header, Container, Card, Image, Divider } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Card, Image, Divider } from 'semantic-ui-react';
 import axios from 'axios';
 import Form from './Form';
 
@@ -51,23 +51,24 @@ class Home extends Component {
             { showForm ? 'Hide Form' : 'New App'}
           </button>
           { showForm ? this.form() : 
-            <Card.Group itemsPerRow={4}>
-              { apps.map( app =>
-              <Card key={app.id}>
-                <Link to={`/apps/${app.id}`}>
-                  <Card.Content>
-                    <Image src={app.logo}/>
-                    <Divider />
-                    <Card.Header>
-                      {app.name}
-                    </Card.Header>
-                  </Card.Content>
-                </Link>
-              </Card>
-                )
-              }
-            </Card.Group>
-          }
+          <Card.Group itemsPerRow={4}>
+            { apps.map( app =>
+            <Card key={app.id}>
+              <Link to={`/apps/${app.id}`}>
+                <Card.Content>
+                  <Image src={app.logo} alt={"logo"} height="80"/>
+                  <Divider />
+                  <Card.Header>
+                    App Name: {app.name}
+                    <br/>
+                    Price: ${app.price}
+                  </Card.Header>
+                </Card.Content>
+              </Link>
+            </Card>
+            )}
+          </Card.Group>
+        }
       </div>
     )
   }
