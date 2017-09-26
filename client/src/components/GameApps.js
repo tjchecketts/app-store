@@ -57,7 +57,7 @@ class GameApps extends React.Component {
         { edit ? this.edit() : this.show() }
         <button onClick={this.toggleEdit}>{ edit ? 'Cancel' : 'Edit App' }</button>
         {/* delete action not working right now */}
-        <button onClick={ () => this.removeApp(this.state)}>
+        <button onClick={ () => this.removeApp(this.state.app.id)}>
           Delete App
         </button>
       </div>
