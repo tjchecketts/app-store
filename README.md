@@ -1,24 +1,12 @@
-# README
+# Mock App Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Mock App Store built with Ruby on Rails and React. This project assumes the user is an admin and is able to update, create, and delete the apps as needed. Data seeded from Faker.
 
-Things you may want to cover:
+This project still needs some love and is a work in progress.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TODO:
+* Use better styling to make app more responsive
+* Add testing to make sure entire project works as designed
+* Refactor code to make it more efficient
+* Use more realistic types of data
+* Seperate abilities of admin and logged in user
